@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- link to fontawesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -18,12 +20,100 @@
 
     <h1>BOOKCentral</h1>
 
-    <h2>NEW RELEASE</h2>
+
+    <!-- lightbox  -->
+   <h2>NEW RELEASE</h2>
+
+   <div class="row">
+     <div class="column">
+       <img src="images/N-theSunshineWalkers.png" id="openModal1" class="imgSize hover-shadow cursor">
+     </div>
+     <div class="column">
+       <img src="images/N-magician.png" id="openModal2" class="imgSize hover-shadow cursor">
+     </div>
+     <div class="column">
+       <img src="images/N-goneGirl.png" id="openModal3" class="imgSize hover-shadow cursor">
+     </div>
+     <div class="column">
+       <img src="images/N-aprilInParis1921.png" id="openModal4" class="imgSize hover-shadow cursor">
+     </div>
+     <!-- <div class="column">
+       <img src="images/N-theSunMoonSTars.png" id="openModal5" class="imgSize hover-shadow cursor">
+     </div> -->
+   </div>
+
+   <div id="myModal" class="modal">
+     <span class="close cursor" id="closeModal">&times;</span>
+     <div class="modal-content">
+       <div class="mySlides">
+         <div class="numbertext">1 / 2</div>
+         <img src="images/N-theSunshineWalkers.png" class="slideImages">
+         <img src="images/N-magician.png" class="slideImages">
+         <img src="images/N-goneGirl.png" class="slideImages">
+         <img src="images/N-aprilInParis1921.png" class="slideImages">
+         <!-- <img src="images/N-theSunMoonSTars.png" class="slideImages"> -->
+       </div>
+
+       <div class="mySlides">
+         <div class="numbertext">2 / 2</div>
+         <img src="images/N-aprilInParis1921.png" class="slideImages">
+         <img src="images/N-theSunMoonSTars.png" class="slideImages">
+         <img src="images/R-winterOfHeaven.png" class="slideImages">
+         <img src="images/F-theGirlofInkandStars.jpg" class="slideImages">
+         <!-- <img src="images/N-theSunshineWalkers.png" class="slideImages"> -->
+       </div>
+
+
+       <a class="prev" id="plusPrev">&#10094;</a>
+       <a class="next" id="plusNext">&#10095;</a>
+
+       <div class="caption-container">
+         <p id="caption"></p>
+       </div>
+
+       <div class="row">
+         <div class="column">
+           <img class="demo cursor" src="images/N-theSunshineWalkers.png" alt="Beach" class="imgSize">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/N-magician.png" alt="Fashion" class="imgSize">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/N-goneGirl.png" alt="Picnic" class="imgSize">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/N-aprilInParis1921.png" alt="Product" class="imgSize">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/N-theSunMoonSTars.png" alt="Product" class="imgSize">
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+<!-- search button  -->
+   <div class="form-inline">
+     <div class="form-group mx-sm-3 mb-2">
+      <label for="inputTitle" class="sr-only">Title</label>
+      <input type="tex" class="form-control" id="inputTitle" placeholder="Enter book title">
+    </div>
+    <button id="search" type="button" class="btn btn-primary mb-2">Search</button>
+  </div>
 
 
 
 
-    <script src="js/script.js"></script>
+   <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <!-- bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="js/script.js"></script>
 
   </body>
 </html>
