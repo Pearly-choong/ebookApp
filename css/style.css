@@ -74,7 +74,8 @@
 
 .column {
   float: left;
-  width: 41.66%;
+  /* width: 41.66%; */
+  width: 33.33%;
   height: 50%;
 }
 
@@ -203,4 +204,22 @@ img.hover-shadow {
   width: 33.3%;
   float: left;
   padding: 5px;
+}
+
+
+.carouselImg {
+  max-width: 200px;
+  max-height: 500px;
+  /* height: 287px; */
+  margin: auto;
+  display: inline;
+  border: 2px solid red;
+  padding-right: 0px;
+  margin-right:0;
+  /* width: 200px; */
+
+}
+
+.carousel-item{
+  border: 2px solid blue;
 }
