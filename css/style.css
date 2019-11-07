@@ -31,3 +31,22 @@
 h1 {
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.textSize {
+  font-size: 23px;
+  color: black;
+}
+
+.nav-item a:hover {
+  color: #90b9a9;
+  border-bottom: 5px solid #90b9a9;
+}
+
+.imgSize {
+  width: 150px;
+  height: 250px;
+}
+
+/* .fa-star {
+  color: #fbe555;
+} */

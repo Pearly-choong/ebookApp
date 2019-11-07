@@ -18,6 +18,7 @@
   </head>
   <body>
 
+<div class="container">
     <h1 class="text-center mt-5">BOOKCentral</h1>
     </br></br>
 
@@ -25,7 +26,7 @@
 
     <!-- Carousel slideshow -->
 
-  <div id="carouselExampleInterval" class="carousel slide container" data-ride="carousel">
+  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
     <h3>NEW RELEASE</h3>
     <div class="carousel-inner row">
       <div class="carousel-item bColor active shadow p-3 mb-5 rounded" data-interval="10000">
@@ -41,7 +42,7 @@
           <img src="images/N-magician.png" class=" col-md-2 mr- 0 carouselImg" alt="...">
       </div> -->
       <div class="carousel-item bColor shadow p-3 mb-5 rounded">
-        <img src="images/D-theRarestBird.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
+        <img src="images/F-aSpellForChameleon.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
         <img src="images/H-theCraitorsMark.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
         <img src="images/R-rosemaryBaby.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
           <img src="images/H-redRising.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
@@ -59,19 +60,20 @@
 
 
   <!-- serach bar -->
-  <div class="container">
+
     <nav class="navbar navbar-light mt-2 mb-5 justify-content-center">
       <form class="form-inline">
-        <input id="inputTitle" class="form-control mr-sm-2" type="search" placeholder="Enter book title..." aria-label="Search">
-        <button id="searchTitle" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input id="inputTitle" class="form-control mr-sm-2" type="text" placeholder="Enter book title..." aria-label="Search">
+        <button id="searchTitle" class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
       </form>
     </nav>
-  </div>
+
 
   <hr>
 
-
+</div>
   <!-- filter book navbar -->
+
   <div class="container-fluid">
       <div class="row">
 
@@ -82,19 +84,19 @@
         <div class="col">
           <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link active" id="all" href="">All</a>
+              <a class="nav-link active textSize" id="all" href="">All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="romance" href="">Romance</a>
+              <a class="nav-link textSize" id="romance" href="">Romance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="design" href="">Design</a>
+              <a class="nav-link textSize" id="design" href="">Design</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="horror" href="">Horror</a>
+              <a class="nav-link textSize" id="horror" href="">Horror</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="fantasy" href="">Fantasy</a>
+              <a class="nav-link textSize" id="fantasy" href="">Fantasy</a>
             </li>
           </ul>
 
@@ -110,11 +112,14 @@
         </div>
 
       </div>
-  </div>
 
 
-  <div class="container">
-    <div id="bookResult"></div>
+
+    <!-- display book result -->
+    <div class="container">
+      <div id="bookResult" class="row"></div>
+    </div>
+
   </div>
 
 
