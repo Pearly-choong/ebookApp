@@ -196,19 +196,16 @@ document.getElementById('searchTitle').addEventListener('click', function(){
   for (var i=0; i<books.length; i++){
     if (books[i].title === userInput){
       document.getElementById('bookResult').innerHTML
-      += '</br><div class="col-4">'
-      // + '</br><div class="card" style="width: 23rem;">'
-      + '<img class="imgSize justify-content-center" src=" ' + books[i].photo + ' " alt="Books"/>'
-      // + '<div class="card-body">'
+      += '</br><div class="col-4 text-center">'
+      + '<img class="imgSize" src=" ' + books[i].photo + ' " alt="Books"/>'
       + '</br><h5 class="text-center">' + books[i].title + ' </h5>'
       + '<p class="text-warning text-center">' + books[i].rating + '</p>'
-      // + '</div>'
-      // + '</div>'
       + '</div>';
     }
 
   }
-    if (books.includes(userInput) === false) {
+
+    if (books.includes(userInput) === false){
       document.getElementById('bookResult').innerHTML += '</br> Sorry, ' + userInput + ' is not found.'
     }
      document.getElementById('inputTitle').value = '';
