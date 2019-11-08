@@ -11,7 +11,7 @@ var books = [
     language  : 'English',
     pages   : 500,
     published : '05-05-2016',
-    photo : 'images/F-theGirlofInkandStars,jpg',
+    photo : 'images/F-theGirlofInkandStars.jpg',
     summary : 'Forbidden to leave her island, Isabella Riosse dreams of the faraway lands her father once mapped. When her closest friend disappears into the island’s Forgotten Territories, she volunteers to guide the search. As a cartographer’s daughter, she’s equipped with elaborate ink maps and knowledge of the stars, and is eager to navigate the island’s forgotten heart'
   },
 
@@ -89,7 +89,7 @@ var books = [
     title : 'THE ALCHEMIST',
     id  : 'B107',
     author  : 'Paulo Coelho',
-    rating : '<i class="fas fa-star"><i class="fas fa-star"></i></i>',
+    rating : '<i class="fas fa-star"><i class="fas fa-star"></i></i><i class="fas fa-star"></i>',
     price : 13.00,
     genre : 'Design',
     language  : 'English',
@@ -103,7 +103,7 @@ var books = [
     title : 'THE WORLD OF ABSTRACT ART',
     id  : 'B108',
     author  : 'Emily Robbins',
-    rating : '<i class="fas fa-star"><i class="fas fa-star"></i></i>',
+    rating : '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
     price : 18.30,
     genre : 'Design',
     language  : 'English',
@@ -181,9 +181,39 @@ var books = [
     published : '07-12-2015',
     photo : 'images/N-goneGirl.png',
     summary : 'eaven fans will fall in love with this original novel, featuring favorite characters from the highest-rated show on the WB network!  '
+  },
+
+  {
+    title : 'APRIL IN PARIS 1921',
+    id  : 'B114',
+    author  : 'Tessa Lunney',
+    rating : '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
+    price : 15.00,
+    genre : 'Romance',
+    language  : 'English',
+    pages   : 400,
+    published : '07-12-2015',
+    photo : 'images/N-aprilInParis1921.png',
+    summary : 'Even fans will fall in love with this original novel, featuring favorite characters from the highest-rated show on the WB network!  '
+  },
+
+  {
+    title : 'MAGICIAN',
+    id  : 'B115',
+    author  : 'Raymond E. Feist',
+    rating : '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
+    price : 16.00,
+    genre : 'Fantasy',
+    language  : 'English',
+    pages   : 450,
+    published : '07-12-2017',
+    photo : 'images/N-magician.png',
+    summary : 'Featuring favorite characters from the highest-rated show on the WB network!  '
   }
 
 ];
+
+var i=0;
 
 
 // Search
@@ -205,12 +235,49 @@ document.getElementById('searchTitle').addEventListener('click', function(){
 
   }
 
-    if (books.includes(userInput) === false){
-      document.getElementById('bookResult').innerHTML += '</br> Sorry, ' + userInput + ' is not found.'
-    }
-     document.getElementById('inputTitle').value = '';
+  // if (books[i].title != userInput){
+  //   document.getElementById('bookResult').innerHTML += '</br> Sorry, ' + userInput + ' is not found.'
+  // }
+
+  if (books.includes(userInput) === false){
+    document.getElementById('bookResult').innerHTML += '</br> Sorry, ' + userInput + ' is not found.'
+  }
 
 
 
+  });
+
+
+
+
+
+function allBooks(){
+  document.getElementById('bookResult').innerHTML = '';
+  for(var i=0; i< books.length; i++){
+    document.getElementById('bookResult').innerHTML
+    += '</br><div class="col-4 text-center mt-5">'
+    + '<img class="imgSize" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
+    + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>';
+  }
+}
+
+
+document.getElementById('all').addEventListener('click',function(){
+  allBooks();
+});
+
+
+document.getElementById('romance').addEventListener('click',function(){
+  document.getElementById('bookResult').innerHTML = '';
+  for(var i=0; i< books.length; i++){
+    document.getElementById('bookResult').innerHTML
+    += '</br><div class="col-4 text-center mt-5">'
+    + '<img class="imgSize" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
+    + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>';
+  }
 
 });
