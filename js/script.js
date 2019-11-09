@@ -252,10 +252,21 @@ function allBooks(){
   document.getElementById('bookResult').innerHTML = '';
   for(var i=0; i< books.length; i++){
     document.getElementById('bookResult').innerHTML
-    += '</br><div class="col-4 text-center mt-5">'
+    += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+    + '<div class="desktop">'
     + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
     + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
     + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>'
+    + '<div class="mobile">'
+    + '<div class="left">'
+    + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</div>'
+    + '<div class="right boxContainer">'
+    + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+    + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+    + '</div>'
+    + '</div>'
     + '</div>';
     id++;
   }
@@ -275,10 +286,21 @@ document.getElementById('searchTitle').addEventListener('click', function(){
     if (books[i].title === userInput){
       document.getElementById('inputTitle').value = '';
       document.getElementById('bookResult').innerHTML
-      += '</br><div class="col-4 text-center">'
+      += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+      + '<div class="desktop">'
       + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
-      + '</br><h5 class="text-center">' + books[i].title + ' </h5>'
+      + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
       + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+      + '</div>'
+      + '<div class="mobile">'
+      + '<div class="left">'
+      + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+      + '</div>'
+      + '<div class="right boxContainer">'
+      + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+      + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+      + '</div>'
+      + '</div>'
       + '</div>';
       return;
     }
@@ -310,16 +332,27 @@ document.getElementById('showRomance').addEventListener('click',function(){
   for(var i=0; i< books.length; i++){
     if(books[i].genre === "Romance"){
     document.getElementById('bookResult').innerHTML
-    += '</br><div class="col-4 text-center mt-5">'
+    += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+    + '<div class="desktop">'
     + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
     + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
     + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>'
+    + '<div class="mobile">'
+    + '<div class="left">'
+    + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</div>'
+    + '<div class="right boxContainer">'
+    + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+    + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+    + '</div>'
+    + '</div>'
     + '</div>';
      }
 
   }
-
 });
+
 
 
 // display Design genre books
@@ -328,10 +361,21 @@ document.getElementById('showDesign').addEventListener('click',function(){
   for(var i=0; i< books.length; i++){
     if(books[i].genre === "Design"){
     document.getElementById('bookResult').innerHTML
-    += '</br><div class="col-4 text-center mt-5">'
+    += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+    + '<div class="desktop">'
     + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
     + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
     + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>'
+    + '<div class="mobile">'
+    + '<div class="left">'
+    + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</div>'
+    + '<div class="right boxContainer">'
+    + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+    + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+    + '</div>'
+    + '</div>'
     + '</div>';
     }
   }
@@ -345,10 +389,21 @@ document.getElementById('showHorror').addEventListener('click',function(){
   for(var i=0; i< books.length; i++){
     if(books[i].genre === "Horror"){
     document.getElementById('bookResult').innerHTML
-    += '</br><div class="col-4 text-center mt-5">'
+    += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+    + '<div class="desktop">'
     + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
     + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
     + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>'
+    + '<div class="mobile">'
+    + '<div class="left">'
+    + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</div>'
+    + '<div class="right boxContainer">'
+    + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+    + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+    + '</div>'
+    + '</div>'
     + '</div>';
     }
   }
@@ -362,10 +417,21 @@ document.getElementById('showFantasy').addEventListener('click',function(){
   for(var i=0; i< books.length; i++){
     if(books[i].genre === "Fantasy"){
     document.getElementById('bookResult').innerHTML
-    += '</br><div class="col-4 text-center mt-5">'
+    += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+    + '<div class="desktop">'
     + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
     + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
     + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+    + '</div>'
+    + '<div class="mobile">'
+    + '<div class="left">'
+    + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+    + '</div>'
+    + '<div class="right boxContainer">'
+    + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+    + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+    + '</div>'
+    + '</div>'
     + '</div>';
     }
   }
@@ -461,21 +527,41 @@ function sortTopRead(){
 }
 
 
+// function checkGenre(selectGenre){
+//   console.log(selectGenre);
+//   for (var i = 0; i < books.length; i++){
+//     if (books[i].genre === selectGenre) {
+//       displayBooks(i);
+//     console.log(books[i].genre);
+//     }
+//   }
+// }
 
 
 // display books
 function displayBooks() {
   for(var i=0; i< books.length; i++){
   document.getElementById('bookResult').innerHTML
-  += '</br><div class="col-4 text-center mt-5">'
+  += '</br><div class="col-lg-4 col-md-4 col-sm-12 text-center mt-5">'
+  + '<div class="desktop">'
   + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
   + '</br></br><h5 class="text-center">' + books[i].title + ' </h5>'
   + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+  + '</div>'
+  + '<div class="mobile">'
+  + '<div class="left">'
+  + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[i].photo + ' " alt="Books"/>'
+  + '</div>'
+  + '<div class="right boxContainer">'
+  + '</br></br><h6 class="text-left">' + books[i].title + ' </h6>'
+  + '<p class="text-warning text-left">' + books[i].rating + '</p>'
+  + '</div>'
+  + '</div>'
   + '</div>';
   id++;
   console.log(id.toString());
   }
-}
+};
 
 
 
@@ -504,19 +590,19 @@ $('.myBook').on('click', function(){
       + '<div class="card-body text-left ml-5 mr-5">'
       + '<h4>About this book</h4></br>'
       + '<div class="row">'
-      + '<div class="col-3"><ul>'
+      + '<div class="col-lg-3 col-6"><ul>'
       + '<li class="font-weight-bold">Pages</li>'
       + '</li>' + books[i].pages + '</li>'
       + '</ul></div>'
-      + '<div class="col-3"><ul>'
+      + '<div class="col-lg-3 col-6"><ul>'
       + '<li class="font-weight-bold">Genre</li>'
       + '</li>' + books[i].genre + '</li>'
       + '</ul></div>'
-      + '<div class="col-3"><ul>'
+      + '<div class="col-lg-3 col-6"><ul>'
       + '<li class="font-weight-bold">Language</li>'
       + '</li>' + books[i].language + '</li>'
       + '</ul></div>'
-      + '<div class="col-3"><ul>'
+      + '<div class="col-lg-3 col-6"><ul>'
       + '<li class="font-weight-bold">Published</li>'
       + '</li>' + books[i].published + '</li>'
       + '</ul></div>'

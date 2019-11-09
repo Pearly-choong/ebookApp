@@ -7,9 +7,9 @@
 
 
 
-
+/*  style the carousel  */
 .carouselImg {
-  max-width: 400px;
+  max-width: 300px;
   max-height: 500px;
   /* height: 287px; */
   margin: auto;
@@ -29,8 +29,19 @@
   background-color: #C1EBE1;
 }
 
+
+/*  typography  */
 h1 {
   font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.typoStyle {
+  font-family: 'Lato', sans-serif;
+}
+
+.text-Position {
+  text-align: right;
 }
 
 .genreBtn {
@@ -48,21 +59,28 @@ h1 {
   border-bottom: 5px solid #90b9a9;
 }
 
-.imgSize {
-  width: 160px;
-  height: 230px;
-}
 
 .btn-link {
   color: #90b9a9;
 }
 
 
+/*  style the book images */
+.imgSize {
+  width: 160px;
+  height: 230px;
+}
 
-.myBook:hover {
+.myBook:hover, .hoverEffect:hover {
   transform: scale(1.2);
 }
 
+.hoverEffect:hover {
+  transform: scale(1.1);
+}
+
+
+/*  style the modal screen */
 .myModal {
   display: none;
   position: fixed;
@@ -95,6 +113,12 @@ h1 {
 }
 
 
+.btnLess, .moreInfo {
+  display: none;
+}
+
+
+/*  sytle the icons */
 .fa-bookmark {
     color: green;
     font-size: 2.1rem;
@@ -106,7 +130,122 @@ h1 {
 }
 
 
+/*  Add Zoom Animation for modal  */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
 
-.btnLess, .moreInfo {
-  display: none;
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+
+
+
+
+/*  desktop screen display  */
+@media only screen and (min-width: 1200px) {
+  .mobile {
+    display: none;
+  }
+
+
+
+
+}
+
+
+/*  medium screen display */
+@media only screen and (min-width: 768px ) and (max-width: 1200px){
+  .mobile {
+    display: none;
+  }
+
+  .carouselImg {
+    max-width: 130px;
+    max-height: 350px;
+  }
+
+}
+
+
+/*  mobile screen display */
+@media only screen and (min-width: 375px) and (max-width: 768px){
+  .desktop {
+    display: none;
+  }
+
+  .display-4 {
+    font-size: 30px;
+  }
+
+
+  .carouselImg {
+    max-width: 120px;
+    max-height: 300px;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .imgSize {
+    width: 110px;
+    height: 170px;
+  }
+
+  .boxContainer {
+    width: 50%;
+  }
+
+  .text-Position {
+    text-align: left;
+    padding-left: 18px;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .btn-lg {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+
+  .closeBar {
+    right: 10%;
+    top: 8%;
+  }
+
+  #modalContent {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #90b9a9;
+    width: 100%;
+    height: 1100px;
+    margin-top: 10%;
+  }
+
+
+  .card-body {
+    padding: 0;
+
+  }
+
+
+
 }
