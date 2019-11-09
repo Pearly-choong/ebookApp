@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 
@@ -33,8 +34,8 @@ h1 {
 }
 
 .genreBtn {
-  font-size: 25px;
   color: black;
+
 }
 
 .genreBtn:hover {
@@ -54,4 +55,58 @@ h1 {
 
 .btn-link {
   color: #90b9a9;
+}
+
+
+
+.myBook:hover {
+  transform: scale(1.2);
+}
+
+.myModal {
+  display: none;
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+.closeBar {
+  position: absolute;
+  right: 33%;
+  top: 22%;
+}
+
+#modalContent {
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #90b9a9;
+  width: 40%;
+  height: 1000px;
+  margin-top: 10%;
+}
+
+
+.fa-bookmark {
+    color: green;
+    font-size: 2.1rem;
+    cursor: pointer;
+}
+
+.fa-bookmark:hover {
+  background-color: green;
+}
+
+
+
+.btnLess, .moreInfo {
+  display: none;
 }

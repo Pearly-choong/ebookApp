@@ -18,34 +18,29 @@
   </head>
   <body>
 
-<div class="container">
-    <h1 class="text-center mt-5">BOOKCentral</h1>
+<div class="container-fluid">
+    <h1 class="text-center mt-5 font-weight-bold display-4">BOOKCentral</h1>
     </br></br>
 
 
 
     <!-- Carousel slideshow -->
 
-  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleInterval" class="carousel slide ml-5 mr-5 pl-5" data-ride="carousel">
     <h3>NEW RELEASE</h3>
     <div class="carousel-inner row">
-      <div class="carousel-item bColor active shadow p-3 mb-5 rounded" data-interval="10000">
-        <img src="images/N-aprilInParis1921.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-        <img src="images/N-goneGirl.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-        <img src="images/D-theRarestBird.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-        <img src="images/N-magician.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
+      <div class="carousel-item bColor active shadow p-3 mb-5 rounded" data-interval="5000">
+        <img src="images/N-aprilInParis1921.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="April-In-Paris">
+        <img src="images/N-goneGirl.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="Gone-Girl">
+        <img src="images/D-theRarestBird.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="The-Rarest-Bird">
+        <img src="images/N-magician.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="Magician">
       </div>
-      <!-- <div class="carousel-item bColor" data-interval="2000">
-        <img src="images/F-aSpellForChameleon.png" class="col-md-2 mr- 0 carouselImg" alt="...">
-        <img src="images/D-theRarestBird.png" class="col-md-2 mr- 0 carouselImg" alt="...">
-        <img src="images/N-aprilInParis1921.png" class="col-md-2 mr- 0 carouselImg" alt="...">
-          <img src="images/N-magician.png" class=" col-md-2 mr- 0 carouselImg" alt="...">
-      </div> -->
+
       <div class="carousel-item bColor shadow p-3 mb-5 rounded">
-        <img src="images/F-aSpellForChameleon.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-        <img src="images/H-theCraitorsMark.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-        <img src="images/R-rosemaryBaby.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
-          <img src="images/H-redRising.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="...">
+        <img src="images/F-aSpellForChameleon.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="A-Spell-for-Chameleon">
+        <img src="images/H-theCraitorsMark.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="The-Craitors-Mark">
+        <img src="images/R-rosemaryBaby.png" class="col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="Rosemary">
+          <img src="images/H-redRising.png" class=" col-md-2 mr- 0 pt-4 pb-4 carouselImg" alt="RedRising">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -64,17 +59,17 @@
     <nav class="navbar navbar-light mt-2 mb-5 justify-content-center">
       <form class="form-inline">
         <input id="inputTitle" class="form-control mr-sm-2" type="text" placeholder="Enter book title..." aria-label="Search">
-        <button id="searchTitle" class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+        <button id="searchTitle" class="btn btn=lg btn-outline-success my-2 my-sm-0" type="button">Search</button>
       </form>
     </nav>
 
 
-  <hr>
+  <hr class="ml-5 mr-5">
 
 </div>
-  <!-- filter book navbar -->
 
-  <div class="container-fluid">
+  <!-- filter book navbar -->
+  <div class="container-fluid mb-5 mt-5">
       <div class="row mb-5">
 
         <div class="col">
@@ -82,29 +77,28 @@
         </div>
 
         <div class="col">
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
+          <ul class="nav justify-content-center mb-3">
+            <li>
               <!-- <a class="nav-link active textSize" id="all" href="">All</a> -->
-              <button id="all" class="btn genreBtn my-2 my-lg-0" type="button">All</button>
+              <button id="showAll" class="btn genreBtn btn-lg font-weight-bold" type="button">All</button>
             </li>
-            <li class="nav-item">
+            <li>
               <!-- <a class="nav-link textSize" id="romance" href="">Romance</a> -->
-              <button id="romance" class="btn genreBtn my-2 my-lg-0" type="button">Romance</button>
+              <button id="showRomance" class="btn genreBtn btn-lg font-weight-bold" type="button">Romance</button>
             </li>
-            <li class="nav-item">
+            <li>
               <!-- <a class="nav-link textSize" id="design" href="">Design</a> -->
-              <button id="design" class="btn genreBtn my-2 my-lg-0" type="button">Design</button>
+              <button id="showDesign" class="btn genreBtn btn-lg font-weight-bold" type="button">Design</button>
             </li>
-            <li class="nav-item">
+            <li>
               <!-- <a class="nav-link textSize" id="horror" href="">Horror</a> -->
-              <button id="horror" class="btn genreBtn my-2 my-lg-0" type="button">Horror</button>
+              <button id="showHorror" class="btn genreBtn btn-lg font-weight-bold" type="button">Horror</button>
             </li>
-            <li class="nav-item">
+            <li>
               <!-- <a class="nav-link textSize" id="fantasy" href="">Fantasy</a> -->
-              <button id="fantasy" class="btn genreBtn my-2 my-lg-0" type="button">Fantasy</button>
+              <button id="showFantasy" class="btn genreBtn btn-lg font-weight-bold" type="button">Fantasy</button>
             </li>
           </ul>
-
         </div>
 
         <div class="col">
@@ -119,14 +113,20 @@
       </div>
 
 
-
     <!-- display book result -->
-    <div class="container">
+    <div class="container pb-5 mb-5 mt-3">
       <div id="bookResult" class="row mt-5"></div>
     </div>
 
   </div>
 
+
+  <div class="myModal">
+    <div class="closeBar text-right display-4">
+      &times;
+    </div>
+    <div id="modalContent"></div>
+  </div>
 
    <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
