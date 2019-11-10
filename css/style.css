@@ -11,12 +11,10 @@
 .carouselImg {
   max-width: 300px;
   max-height: 500px;
-  /* height: 287px; */
   margin: auto;
   display: inline;
   padding-right: 0px;
   margin-right: 0px;
-  /* width: 200px; */
 
 }
 
@@ -36,7 +34,7 @@ h1 {
 }
 
 
-.typoStyle {
+.typoStyle, p, h4{
   font-family: 'Lato', sans-serif;
 }
 
@@ -119,11 +117,17 @@ h1 {
 
 
 /*  sytle the icons */
-.fa-bookmark {
+.fa-bookmark, .fa-book, .fa-history {
     color: green;
     font-size: 2.1rem;
     cursor: pointer;
 }
+
+.fa-book, .fa-history, .fas.fa-bookmark {
+  color: #90b9a9;
+  font-size: 2rem;
+}
+
 
 .fa-bookmark:hover {
   background-color: green;
@@ -150,16 +154,55 @@ h1 {
 
 
 
+
+
+
+
 /*  desktop screen display  */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px)  {
   .mobile {
     display: none;
   }
 
+  /* .carouselImg {
+    max-width: 250px;
+    max-height: 450px;
+
+  } */
+
+
+  .bg-container {
+    width: 270px;
+    height: 230px;
+    border : 2px solid #90b9a9;
+
+  }
+
+  .bg-container2 {
+    width: 270px;
+    height: 280px;
+    border : 2px solid #90b9a9;
+
+  }
+
+
+
+  .badge {
+    font-size: 1rem;
+
+  }
+
+  .authorImg {
+    width: 60px;;
+    height: 60px;
+    clip-path: circle(50% at 50% 50%);
+  }
 
 
 
 }
+
+
 
 
 /*  medium screen display */
@@ -169,8 +212,14 @@ h1 {
   }
 
   .carouselImg {
-    max-width: 130px;
-    max-height: 350px;
+    max-width: 150px;
+    max-height: 370px;
+  }
+
+  .authorImg {
+    width: 60px;;
+    height: 60px;
+    clip-path: circle(50% at 50% 50%);
   }
 
 }
@@ -192,6 +241,10 @@ h1 {
     max-height: 300px;
   }
 
+  .mobileAdjust {
+    margin-left: 15px;
+  }
+
   .left {
     float: left;
   }
@@ -206,7 +259,7 @@ h1 {
   }
 
   .boxContainer {
-    width: 50%;
+    width: 60%;
   }
 
   .text-Position {
@@ -246,6 +299,48 @@ h1 {
 
   }
 
+  .bg-container {
+    border : 2px solid #90b9a9;
+    background-color: white;
+  }
 
+
+  .authorImg {
+    width: 60px;;
+    height: 60px;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  .fa-book-reader {
+    background-color: #90b9a9;
+    font-size: 2rem;
+    border: 2px solid #90b9a9;
+    border-radius: 30px;
+    padding: 1rem;
+  }
+
+  /*  style the bookshelves modal screen */
+  .myModal2 {
+    display: none;
+    position: fixed;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    overflow: auto;
+
+  }
+
+  .myModal2 {
+    display: none;
+  }
+
+  .closeBar2 {
+    position: absolute;
+    right: 10%;
+    top: 2%;
+  }
 
 }
