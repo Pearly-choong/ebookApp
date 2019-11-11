@@ -275,13 +275,10 @@ function displayBooks(k) {
 function allBooks(){
   document.getElementById('bookResult').innerHTML = '';
   for(var i=0; i< books.length; i++){
-
     displayBooks(i);
     modal();
 
-   //  if (id < 115) {
      id++;
-   // }
 
   }
 }
@@ -295,7 +292,7 @@ allBooks();
 document.getElementById('searchTitle').addEventListener('click', function(){
   document.getElementById('bookResult').innerHTML = '';
 
-  var userInput = (document.getElementById('inputTitle').value).toUpperCase();
+  var userInput = (document.getElementById('inputTitle').value).toUpperCase().trim();
   console.log(userInput);
 
   for (var i=0; i<books.length; i++){
@@ -529,13 +526,6 @@ document.getElementById('sortSelect').addEventListener('click',function(){
   sortList();
 });
 
-// function another(selection){
-//   for (var i=0; i < books.length; i++){
-//     if (books[i].genre.toLowerCase().trim() === 'selection'){
-//     sortList();
-//     }
-//   }
-// }
 
 function sortList(){
   document.getElementById('bookResult').innerHTML = '';
@@ -664,7 +654,51 @@ $('.btnMore').on('click',function(){
 });
 
 
+// modal for new release book - onlick on images from carousel
 $('#B114').on('click',function(){
   $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
   modalContent('B114');
+});
+
+$('#B113').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B113');
+});
+
+$('#B109').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B109');
+});
+
+$('#B115').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B115');
+});
+
+$('#B105').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B105');
+});
+
+$('#B111').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B111');
+});
+
+$('#B104').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B104');
+});
+
+$('#B110').on('click',function(){
+  $('.myModal').show();
+  document.getElementById('modalContent').innerHTML = '';
+  modalContent('B110');
 });
