@@ -247,22 +247,47 @@ var books = [
 
 var id = 101;
 
-// dsiplay all books
+
+// function for display books
+function displayBooks(k) {
+  document.getElementById('bookResult').innerHTML
+  += '</br><div class="col-lg-3 col-md-4 col-sm-12 text-center mb-5">'
+  + '<div class="desktop">'
+  + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
+  + '</br></br><h5 class="text-center">' + books[k].title + ' </h5>'
+  + '<p class="text-warning text-center">' + books[k].rating + '</p>'
+  + '</div>'
+  + '<div class="mobile">'
+  + '<div class="left pl-4">'
+  + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
+  + '</div>'
+  + '<div class="right boxContainer">'
+  + '</br></br><h6 class="text-left">' + books[k].title + ' </h6>'
+  + '<p class="text-warning text-left">' + books[k].rating + '</p>'
+  + '</div>'
+  + '</div>'
+  + '</div>';
+
+};
+
+
+// function for display all books
 function allBooks(){
   document.getElementById('bookResult').innerHTML = '';
   for(var i=0; i< books.length; i++){
-    console.log(id);
+
     displayBooks(i);
-    console.log(id);
-    if (id < 115) {
-    id++;
-   }
-    console.log(id);
+    modal();
+
+   //  if (id < 115) {
+     id++;
+   // }
+
   }
 }
 
 
-
+// dsiplay all books by default
 allBooks();
 
 
@@ -294,6 +319,8 @@ document.getElementById('searchTitle').addEventListener('click', function(){
 
 
 
+
+
 //conditional display
 // display all genre book
 document.getElementById('showAll').addEventListener('click',function(){
@@ -301,227 +328,149 @@ document.getElementById('showAll').addEventListener('click',function(){
 });
 
 
+// display Romance genre books
+document.getElementById('showRomance').addEventListener('click',function(){
+    filterModal('romance');
+});
 
 
+// function to filter Modal display content
+function filterModal(data){
+    console.log('romance');
+     document.getElementById('bookResult').innerHTML = '';
+     var k=0;
+     //var romanceId = 101;
+     for( k=0; k< books.length; k++){
+       if(books[k].genre.toLowerCase() === data){
+         document.getElementById('bookResult').innerHTML
+         += '</br><div class="col-lg-3 col-md-4 col-sm-12 text-center mb-5">'
+         + '<div class="desktop">'
+         + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
+         + '</br></br><h5 class="text-center">' + books[k].title + ' </h5>'
+         + '<p class="text-warning text-center">' + books[k].rating + '</p>'
+         + '</div>'
+         + '<div class="mobile">'
+         + '<div class="left pl-4">'
+         + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
+         + '</div>'
+         + '<div class="right boxContainer">'
+         + '</br></br><h6 class="text-left">' + books[k].title + ' </h6>'
+         + '<p class="text-warning text-left">' + books[k].rating + '</p>'
+         + '</div>'
+         + '</div>'
+         + '</div>';
+
+
+
+        $('.myBook').on('click', function(){
+            $('.myModal').show();
+          console.log(this.id);
+           document.getElementById('modalContent').innerHTML = '';
+           for (var i=0; i < books.length; i++){
+              console.log(books[i].genre.toLowerCase());
+              console.log(this.id, books[i].id);
+             if ((books[i].genre.toLowerCase().trim() === data) && (this.id.trim() === books[i].id.trim())) {
+               console.log('modal content');
+
+               document.getElementById('modalContent').innerHTML
+               += '<div class="container mt-5">'
+               + '<div class="text-center"><img class="imgSize" src=" ' + books[i].photo + ' " alt="Books"/>'
+               + '</br></br><span class="justify-content-center">'
+               + '<button class="btn btn-outline-success mr-5 p-2" type="button">BUY  | $' + books[i].price.toFixed(2) + '</button>'
+               + '<i class="far fa-bookmark"></i>'
+               + '</span></div>'
+               + '<hr class="ml-5 mr-5">'
+               + '<div class="text-center">'
+               + '<h4> ' + books[i].title + ' </h4>'
+               + '<p>by ' + books[i].author + '</p>'
+               + '<p class="text-warning text-center">' + books[i].rating + '</p>'
+               + '</div>'
+               + '<hr class="ml-5 mr-5">'
+               + '<div class="card-body text-left ml-5 mr-5">'
+               + '<h4>About this book</h4></br>'
+               + '<div class="row">'
+               + '<div class="col-lg-3 col-6"><ul>'
+               + '<li class="font-weight-bold">Pages</li>'
+               + '</li>' + books[i].pages + '</li>'
+               + '</ul></div>'
+               + '<div class="col-lg-3 col-6"><ul>'
+               + '<li class="font-weight-bold">Genre</li>'
+               + '</li>' + books[i].genre + '</li>'
+               + '</ul></div>'
+               + '<div class="col-lg-3 col-6"><ul>'
+               + '<li class="font-weight-bold">Language</li>'
+               + '</li>' + books[i].language + '</li>'
+               + '</ul></div>'
+               + '<div class="col-lg-3 col-6"><ul>'
+               + '<li class="font-weight-bold">Published</li>'
+               + '</li>' + books[i].published + '</li>'
+               + '</ul></div>'
+               + '</div>'
+               + '<hr>'
+               + '<div>'
+               + '<h4>Summary</h4></br>'
+               + '<p>' + books[i].summary + '</p>'
+               + '<button class="btn btn-link btnMore" type="button">Read More</button>'
+               + '<p class="moreInfo">' + books[i].readmore + '</p>'
+               + '<button class="btn-link btnLess" type="button">Read Less</button>'
+               + '</div>'
+               + '</div>'
+               + '</div>'
+               + '</div>';
+             };
+           }
+    });
+  //romanceId++;
+  }
+  }
+
+}
 
 
 // display Design genre books
 document.getElementById('showDesign').addEventListener('click',function(){
-  document.getElementById('bookResult').innerHTML = '';
-  for(var i=0; i< books.length; i++){
-    if(books[i].genre === "Design"){
-    displayBooks(i);
-    }
-  }
+  filterModal('design');
 
 });
 
 
 // display Horror genre books
 document.getElementById('showHorror').addEventListener('click',function(){
-  document.getElementById('bookResult').innerHTML = '';
-  for(var i=0; i< books.length; i++){
-    if(books[i].genre === "Horror"){
-    displayBooks(i);
-    }
-  }
-
+  filterModal('horror');
 });
 
 
 // display Fantasy genre books
 document.getElementById('showFantasy').addEventListener('click',function(){
-  document.getElementById('bookResult').innerHTML = '';
-  for(var i=0; i< books.length; i++){
-    if(books[i].genre === "Fantasy"){
-    displayBooks(i);
-    }
-  }
-
-});
-
-
-// dropdown selection : Sort by title, authors or top read
-document.getElementById('sortSelect').addEventListener('click',function(){
-  document.getElementById('bookResult').innerHTML = '';
-  var x = document.getElementById('sortSelect').value;
-  console.log(typeof(x));
-
-  switch (x) {
-    case 'one':
-    sortTitle();
-    break;
-
-    case 'two':
-    sortAuthors();
-    break;
-
-    case 'three':
-    sortTopRead();
-    break;
-
-    default:
-    allBooks();
-    break;
-
-  }
-
-  console.log(x);
+  filterModal('fantasy');
 });
 
 
 
-// sort by book title from A-Z (ascending)
-function sortTitle(){
-  books.sort(compare);
-
-  function compare(a,b) {
-    if(a.title > b.title){
-      return 1;
-    } else if (a.title < b.title){
-      return -1;
-    }
-    allBooks;
-  }
-
-  document.getElementById('bookResult').innerHTML = '';
-  displayBooks();
 
 
-}
-
-
-
-// sort by author's name from A-Z (ascending)
-function sortAuthors(){
-  books.sort(compare);
-
-  function compare(a,b) {
-    if(a.author > b.author){
-      return 1;
-    } else if (a.author < b.author){
-      return -1;
-    }
-    allBooks;
-  }
-
-  document.getElementById('bookResult').innerHTML = '';
-  displayBooks();
-
-
-}
-
-
-// sort by top reads number from highest to lowest (descending)
-function sortTopRead(){
-  books.sort(compare);
-
-  function compare(a,b) {
-    if(a.readers < b.readers){
-      return 1;
-    } else if (a.readers > b.readers){
-      return -1;
-    }
-    allBooks;
-  }
-
-  document.getElementById('bookResult').innerHTML = '';
-  displayBooks();
-
-}
-
-
-// function checkGenre(selectGenre){
-//   console.log(selectGenre);
-//   for (var i = 0; i < books.length; i++){
-//     if (books[i].genre === selectGenre) {
-//       displayBooks(i);
-//     console.log(books[i].genre);
-//     }
-//   }
-// }
-
-
-// display books
-function displayBooks(k) {
-  document.getElementById('bookResult').innerHTML
-  += '</br><div class="col-lg-3 col-md-4 col-sm-12 text-center mb-5">'
-  + '<div class="desktop">'
-  + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
-  + '</br></br><h5 class="text-center">' + books[k].title + ' </h5>'
-  + '<p class="text-warning text-center">' + books[k].rating + '</p>'
-  + '</div>'
-  + '<div class="mobile">'
-  // + '<div class="left pl-4">'
-  // + '<img id="B' + id.toString() + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
-  // + '</div>'
-  + '<div class="right boxContainer">'
-  + '</br></br><h6 class="text-left">' + books[k].title + ' </h6>'
-  + '<p class="text-warning text-left">' + books[k].rating + '</p>'
-  + '</div>'
-  + '</div>'
-  + '</div>';
-   modalContent();
-  // console.log(id.toString());
-  // $(this.id).on('click', function(){
-//   console.log('books');
-   // console.log(this.id);
- // });
-return
-};
-
-// display Romance genre books
-document.getElementById('showRomance').addEventListener('click',function(){
-  console.log('romance');
-   document.getElementById('bookResult').innerHTML = '';
-   for(var i=0; i< books.length; i++){
-     if(books[i].genre === "Romance"){
-     displayBooks(i);
-     console.log(books[i].id);
-     var clickId=books[i].id;
-     $().on('click', function(){
-       console.log(this.id);
-     })
-  //
-  //    $('.myModal').show();
-  //
-  //
-
-      }
-
-   }
-
-
-
-});
-
+// function to open modal
  function modal(){
+   console.log('modal');
   $('.myBook').on('click', function(){
-  console.log('books');
+
    console.log(this.id);
-
-   document.getElementById('modalContent').innerHTML = '';
    $('.myModal').show();
-  for (var j=0; j < books.length; j++){
-    console.log(this.id, books[j].id );
-    if (books[j].genre.toLowerCase() === data.toLowerCase()){
-    // if(this.id.trim() === books[j].id.trim()){
-      console.log(this.id);
-      modalContent(this.id);
-    }
-    console.log(books[j].readmore);
+   document.getElementById('modalContent').innerHTML = '';
 
-  }
+   modalContent(this.id);
 
  });
  }
 
+
+// function to open modal content
 function modalContent(thisId){
   console.log(thisId)
   // $('.myModal').show();
   for (var i=0; i < books.length; i++){
     console.log(thisId, books[i].id);
-    if(this.id.trim() === books[i].id.trim()){
+    if(thisId.trim() === books[i].id.trim()){
   document.getElementById('modalContent').innerHTML
   += '<div class="container mt-5">'
   + '<div class="text-center"><img class="imgSize" src=" ' + books[i].photo + ' " alt="Books"/>'
@@ -574,6 +523,118 @@ function modalContent(thisId){
 
 
 
+
+// dropdown selection : Sort by title, authors or top read
+document.getElementById('sortSelect').addEventListener('click',function(){
+  sortList();
+});
+
+// function another(selection){
+//   for (var i=0; i < books.length; i++){
+//     if (books[i].genre.toLowerCase().trim() === 'selection'){
+//     sortList();
+//     }
+//   }
+// }
+
+function sortList(){
+  document.getElementById('bookResult').innerHTML = '';
+  var x = document.getElementById('sortSelect').value;
+  console.log(typeof(x));
+
+  switch (x) {
+    case 'one':
+    sortTitle();
+    break;
+
+    case 'two':
+    sortAuthors();
+    break;
+
+    case 'three':
+    sortTopRead();
+    break;
+
+    default:
+    allBooks();
+    break;
+
+  }
+
+  console.log(x);
+}
+
+
+// sort by book title from A-Z (ascending)
+function sortTitle(){
+  books.sort(compare);
+
+  function compare(a,b) {
+    if(a.title > b.title){
+      return 1;
+    } else if (a.title < b.title){
+      return -1;
+    }
+    allBooks;
+  }
+
+  document.getElementById('bookResult').innerHTML = '';
+  var i=0
+  for (i=0; i < books.length; i++ ){
+  displayBooks(i);
+  }
+
+}
+
+
+
+// sort by author's name from A-Z (ascending)
+function sortAuthors(){
+  books.sort(compare);
+
+  function compare(a,b) {
+    if(a.author > b.author){
+      return 1;
+    } else if (a.author < b.author){
+      return -1;
+    }
+    allBooks;
+  }
+
+  document.getElementById('bookResult').innerHTML = '';
+  var i=0
+  for (i=0; i < books.length; i++ ){
+  displayBooks(i);
+  }
+
+
+}
+
+
+// sort by top reads number from highest to lowest (descending)
+function sortTopRead(){
+  books.sort(compare);
+
+  function compare(a,b) {
+    if(a.readers < b.readers){
+      return 1;
+    } else if (a.readers > b.readers){
+      return -1;
+    }
+    allBooks;
+  }
+
+  document.getElementById('bookResult').innerHTML = '';
+  var i=0
+  for (i=0; i < books.length; i++ ){
+  displayBooks(i);
+  }
+
+}
+
+
+
+
 //  close books info modal screen
 $('.closeBar').on('click',function(){
   $('.myModal').hide();
@@ -603,6 +664,7 @@ $('.btnMore').on('click',function(){
 });
 
 
-$('.myBook').on('click', function(){
-  console.log(this.id);
-})
+$('#B114').on('click',function(){
+  $('.myModal').show();
+  modalContent('B114');
+});

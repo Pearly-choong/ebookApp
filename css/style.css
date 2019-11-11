@@ -218,6 +218,24 @@ h1 {
     clip-path: circle(50% at 50% 50%);
   }
 
+  .myModal2, .bookshelvesIcon {
+    display: none;
+  }
+
+  .bg-container {
+    width: 200px;
+    height: 230px;
+    border : 2px solid #90b9a9;
+
+  }
+
+  .bg-container2 {
+    width: 200px;
+    height: 400px;
+    border : 2px solid #90b9a9;
+
+  }
+
 }
 
 
