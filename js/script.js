@@ -339,23 +339,8 @@ function filterModal(data){
      //var romanceId = 101;
      for( k=0; k< books.length; k++){
        if(books[k].genre.toLowerCase() === data){
-         document.getElementById('bookResult').innerHTML
-         += '</br><div class="col-lg-3 col-md-4 col-sm-12 text-center mb-5">'
-         + '<div class="desktop">'
-         + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
-         + '</br></br><h5 class="text-center">' + books[k].title + ' </h5>'
-         + '<p class="text-warning text-center">' + books[k].rating + '</p>'
-         + '</div>'
-         + '<div class="mobile">'
-         + '<div class="left pl-4">'
-         + '<img id="' + books[k].id + ' " class="imgSize myBook" src=" ' + books[k].photo + ' " alt="Books"/>'
-         + '</div>'
-         + '<div class="right boxContainer">'
-         + '</br></br><h6 class="text-left">' + books[k].title + ' </h6>'
-         + '<p class="text-warning text-left">' + books[k].rating + '</p>'
-         + '</div>'
-         + '</div>'
-         + '</div>';
+
+         displayBooks(k);
 
 
 
@@ -641,7 +626,7 @@ $('#bookshelves').on('click', function(){
 
 $('.closeBar2').on('click',function(){
   $('.myModal2').hide();
-  $('.myModal').hide();
+  // $('.myModal').hide();
   $('#bookshelves').show();
 });
 
